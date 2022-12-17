@@ -7,7 +7,7 @@
     --textbasecolor:#2e2f42; /* базовый цвет шрифта*/
     --buttonbasecolor:#4d5ae5; /* цвет кнопки, эффекты */
     --textsecondcolor: #434455; /* второй цвет шрифта*/
-    --addtextcolor: #ffffff; /*доп цвет заголовков, кнопок*/
+    --fullwhitecolor: #ffffff; /*доп цвет заголовков, кнопок*/
     --buttonbackcol: #404BBF; /*цвет бека кнопки*/
     --footertextcol: #E7E9FC; /*цвет текста в футере*/
     --footerlogocol: #f4f4fd; /*цвет лого STUDIO в футере*/
@@ -113,7 +113,7 @@ header .container {
     gap: 40px;
     display: flex;
     padding: 0;
-    margin: 0 0 0 332px;
+    margin: 0 0 0 auto;
     /*margin-left: auto;*/
 }
 .contacts {
@@ -126,6 +126,16 @@ padding: 24px 0px 24px 0px;
 }
 .contacts:hover, .contacts:focus {
     color: var(--buttonbasecolor);
+    fill: var(--buttonbasecolor);
+}
+.contacts:hover .contacts-icon, .contacts:focus .contacts-icon {
+    fill: var(--buttonbasecolor);
+}
+.contacts-icon {
+    padding: 0;
+    margin-right: 5px;
+    display: inline-block;
+    fill: var(--textbasecolor);
 }
 /* конец общего хедера */
 /* страница Studio */
@@ -136,7 +146,13 @@ padding: 24px 0px 24px 0px;
    /* padding: 192px 318px 192px 318px;*/
 }
 .hero {
-    background: var(--textbasecolor);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+     rgba(46, 47, 66, 0.7)),
+    url(../images/group-people-working-website-template.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 192px 0 192px 0;
 }
 .hero-title {
@@ -145,7 +161,7 @@ padding: 24px 0px 24px 0px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     width: 496px;
-    color: var(--addtextcolor);  
+    color: var(--fullwhitecolor);  
 }
 .button-order {
     font-family: inherit;
@@ -153,7 +169,7 @@ padding: 24px 0px 24px 0px;
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.04em;
-    color: var(--addtextcolor);
+    color: var(--fullwhitecolor);
     background-color: var(--buttonbasecolor);
     cursor:pointer;
     width: 170px;
@@ -162,14 +178,21 @@ padding: 24px 0px 24px 0px;
     border-radius: 4px;
     padding: 16px, 32px, 16px, 32px;
     margin-top: 48px;
-    box-shadow: 0px 4px 4px 0px #00000026;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border: 2px solid var(--buttonbasecolor);
 }
 .button-order:hover {
     background-color: var(--buttonbasecolor);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
+    0px 1px 1px rgba(46, 47, 66, 0.16), 
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+    border-radius: 4px;
+
 }
 .button-order:focus {
     background-color: var(--buttonbackcol);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }
 .benefits {
     padding: 120px 0px 120px 0px;
@@ -197,6 +220,12 @@ padding: 24px 0px 24px 0px;
     margin-top: 8px;
     color:var(--textsecondcolor);
 }
+.benefits-icon {
+    width: 264px;
+    height: 112px;
+    padding: 24px 100px;
+    background-color: #F4F4FD;
+}
 .work {
     padding: 0px 0px 120px 0px;
 }
@@ -221,7 +250,7 @@ padding: 24px 0px 24px 0px;
     gap: 24px;
 }
 .team {
-    background-color: #F4F4FD ;
+    background-color: var(--footerlogocol);
     margin-top: 0px;
     padding: 120px 0 120px 0;
 }
@@ -241,7 +270,6 @@ padding: 24px 0px 24px 0px;
     letter-spacing: 0.02em;
     color: var(--textbasecolor);
     text-transform: capitalize;
-   /* margin-top: 120px;*/
 }
 .team-list {
     list-style: none;
@@ -256,19 +284,85 @@ padding: 24px 0px 24px 0px;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
     box-shadow: 0px 1px 1px 0px rgba(46, 47, 66, 0.16);
     box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08); 
-    background-color: #ffffff;
+    background-color: var(--fullwhitecolor);
     overflow: hidden;
 }
 .team-card-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 32px 16px 32px 16px;
+    padding: 32px 16px 0 16px;
 }
-/* общий футер */
+.tsl-list {
+    list-style: none;
+    width: 232px;
+    display: flex;
+    margin: 8px 0px 0px 0px;
+    padding: 0 16px 32px 16px;
+    gap: 24px;
+}
+.tsl-list > li {
+    padding: 4px 0 4px 0;
+    margin: 0;
+}
+.tsl-item {
+    width: 40px;
+    height: 40px;
+}
+.clients {
+    padding: 120px 0px 120px 0px;
+}
+.customer-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+.customer-list {
+    list-style: none;
+    display: flex;
+    margin: 72px 0 0 0;
+    padding: 0;
+    justify-content: space-between;
+    gap: 24px;
+}
+.customer-item-link {
+    width: 168px;
+    height: 88px;
+    display: inline-block;
+    padding: 16px 32px;
+    margin: auto;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    align-items: center;
+}
+.customer-icon {
+    display: block;
+    /*align-items: center;*/
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    fill: #8E8F99;
+}
+.customer-icon:hover {
+    fill: #4D5AE5;
+}
+.customer-item-link:hover {
+    border-color: #4D5AE5;
+}
 .footer {
     background-color: var(--textbasecolor);
     padding: 100px 0px 100px 0px;
+}
+/*footer .container {
+    display: flex;
+}*/
+.footer-list {
+    display: flex;
+    gap:120px;
+    margin: 0;
+    
 }
 footer .logo{
     padding: 0;
@@ -278,6 +372,39 @@ footer .logo{
     margin-top: 16px;
     width: 264px;
     color: var(--footertextcol);
+}
+.footer-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em; 
+    color: var(--fullwhitecolor);  
+    display : block; 
+}
+.footer-sl-list {
+    list-style: none;
+    width: 232px;
+    display: flex;
+    margin: 16px 0px 0px 0px;
+    padding: 0;
+    gap: 16px;
+}
+.f-sl-link {
+    display: block;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    fill :var(--fullwhitecolor);
+    color : var(--fullwhitecolor);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-sl-item {
+    
+}
+.f-sl-link:hover {
+    fill: currentColor;
+    background-color: #31D0AA;
 }
 /* конец общего футера */
 /* страница Portfolio */
@@ -301,16 +428,17 @@ footer .logo{
     color: var(--buttonbasecolor);
     cursor:pointer;
     border-radius: 4px;
-    border-color: #E7E9FC;
-    border-width: 1px;
-    border-style: inset;
-    border: none;
+    border: 1px solid #E7E9FC;
     padding: 8px 16px 8px 16px;
-    background-color:#F4F4FD;
+    background-color: var(--footerlogocol);
 }
 .button-filter:hover, .button-filter:focus {
     background: var(--buttonbasecolor);
-    color : var(--addtextcolor)
+    color : var(--fullwhitecolor);
+    box-shadow : 0px 3px 1px rgba(0, 0, 0, 0.1), 
+    0px 2px 1px rgba(0, 0, 0, 0.08), 
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius : 4px;
 }
 .portfolio-list {
     display: flex;
@@ -328,12 +456,19 @@ img {
 }
 .portfolio-item {
     padding: 32px 0px 32px 16px;
-    border: 0.5px solid #F4F4FD;
-    background-color: #ffffff;
+    border: 0.5px solid var(--footerlogocol);
+    background-color: var(--fullwhitecolor);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    border-top: none;
+}
+.portfolio-link:hover .portfolio-item {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-top: none;
+}
+.portfolio-link {
+    text-decoration: none;
 }
 .portfolio-title {
     font-weight: 500;
