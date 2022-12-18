@@ -383,17 +383,23 @@ footer .logo{
 }
 .footer-sl-list {
     list-style: none;
-    width: 232px;
+    width: 208px;
     display: flex;
     margin: 16px 0px 0px 0px;
     padding: 0;
     gap: 16px;
 }
-.f-sl-link {
-    display: block;
-    padding: 8px;
+.footer-sl-list > li {
     width: 40px;
     height: 40px;
+}
+.f-sl-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     fill :var(--fullwhitecolor);
     color : var(--fullwhitecolor);
     border-radius: 50%;
