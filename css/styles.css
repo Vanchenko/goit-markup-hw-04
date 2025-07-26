@@ -351,8 +351,6 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tsl-svg {
-    width: 16px;
-    height: 16px;
     fill: #f4f4fd;
 }
 .tsl-item:hover, .tsl-item:focus     {
@@ -455,8 +453,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 100px 0px;
 }
 .footer-list {
-    display: flex;
-    
+    display: flex; 
     align-items: baseline;
 }
 .footer-block-one {
